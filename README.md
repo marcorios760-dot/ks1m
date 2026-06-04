@@ -145,14 +145,6 @@ Running `TRAM_BED` and adjusting the screws per the calculator output reduces be
 
 # How to adjust
 
-## Z-axis Belt Replacement
-
-Full official guide: [Kobra S1 Max – Z-axis Belt Replacement Guide](https://wiki.anycubic.com/en/fdm-3d-printer/kobra-s1-max-combo/z-axis-belt-replacement-guide)
-
-**Tools required:** H2.0 Allen key
-
-### Removal
-
 1. Turn off the printer and disconnect power.
 2. Lay the printer on its side to access the bottom.
 3. **Secure the pulleys! Image below**.
