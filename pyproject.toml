@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "tram-calc"
+version = "0.1.0"
+description = "Bed tramming calculator for Klipper / Rinkhals (Kobra S1 Max)"
+authors = []
+readme = "README.md"
+packages = [{ include = "tram_calc.py" }]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+[tool.poetry.scripts]
+tram-calc = "tram_calc:main"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
