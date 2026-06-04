@@ -47,14 +47,6 @@ Probe positions correspond to:
 | Front-Right   | 320 | 30  |
 | Rear-Center   | 175 | 320 |
 
-### 2. Clone / copy the script
-
-```bash
-# place it anywhere convenient, e.g.:
-cp tram_calc.py ~/tram_calc.py
-chmod +x ~/tram_calc.py
-```
-
 ---
 
 ## Usage
