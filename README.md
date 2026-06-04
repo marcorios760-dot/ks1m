@@ -137,15 +137,18 @@ A deviation ≤ 0.05 mm is shown as `OK` and requires no action.
 
 Running `TRAM_BED` and adjusting the screws per the calculator output reduces bed deviation significantly.
 
-**Before** — range 2.65 mm (bed badly out of tram):
+<table>
+<tr>
+<td align="center"><b>Before</b> — range 2.65 mm</td>
+<td align="center"><b>After</b> — range 0.41 mm</td>
+</tr>
+<tr>
+<td><img src="img/Screenshot%202026-06-03%20214108.png" alt="Before tramming"></td>
+<td><img src="img/Screenshot%202026-06-03%20225347.png" alt="After tramming"></td>
+</tr>
+</table>
 
-![Before tramming](img/Screenshot%202026-06-03%20214108.png)
-
-**After** — range 0.41 mm (bed trammed):
-
-![After tramming](img/Screenshot%202026-06-03%20225347.png)
-
----
+# How to adjust
 
 ## Z-axis Belt Replacement
 
@@ -157,30 +160,13 @@ Full official guide: [Kobra S1 Max – Z-axis Belt Replacement Guide](https://wi
 
 1. Turn off the printer and disconnect power.
 2. Lay the printer on its side to access the bottom.
-3. Loosen the two screws securing the belt tensioner.
-4. Remove the hook tension spring to fully release belt tension.
-5. Slide the belt off the Z-axis motor pulley, then off the three bottom pulleys.
-6. Remove the two tensioner screws with the H2.0 Allen key and pull the tensioner free.
-
-### Installation
-
-1. Route the new belt around the three bottom pulleys.
-2. Seat the belt onto the Z-axis motor pulley.
-3. Reinstall the tensioner and tighten its two screws with the H2.0 Allen key.
-4. Reattach the hook tension spring.
+3. **Secure the pulleys! Image below**.
+4. Remove the hook tension spring to fully release belt tension follow official guide: [Kobra S1 Max – Z-axis Belt Replacement Guide](https://wiki.anycubic.com/en/fdm-3d-printer/kobra-s1-max-combo/z-axis-belt-replacement-guide)
+5. Move pulleys acording to the script output (be sure about CW, CCW = bed up / bed down)
+6. Reasamble
+7. After adjusting all screws, re-run `TRAM_BED` and the script to verify.
 
 ### Pulley securing tip
 
-When routing the belt around the three bottom pulleys, the pulleys tend to shift and fall out of position. **Secure all three pulleys with a strip of tape before threading the belt** — this keeps them locked in place while you work and makes routing significantly easier.
-
+When routing the belt around the three bottom pulleys, the pulleys tend to shift and fall out of position. **Secure all three pulleys with a strip of tape before threading the belt** — this keeps them locked in place while you work and makes routing significantly easier. Remove the tape once the belt is fully seated and the tensioner is tightened.
 ![Three bottom pulleys taped in place](img/printer_belt.png)
-
-Remove the tape once the belt is fully seated and the tensioner is tightened.
-
----
-
-## Tips
-
-- Run the macro with the bed and nozzle at printing temperature for the most accurate results.
-- After adjusting all screws, re-run `TRAM_BED` and the script to verify.
-- The HH:MM notation mirrors Klipper's bed-screws adjust helper: `00:30` = half a turn, `01:15` = one and a quarter turns.
