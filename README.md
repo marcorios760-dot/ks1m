@@ -15,9 +15,9 @@ Reads `PROBE_ACCURACY` output from the `TRAM_BED` Klipper macro and tells you ex
 
 ### 1. Add the macro to Klipper
 
-Paste the following into your printer config (e.g. `printer.cfg` or a dedicated `macros.cfg`):
+Paste the following into your printer config printer.custom.conf
 
-```ini
+```gcode
 [gcode_macro TRAM_BED]
 description: Probe 3 lead screw positions (3 samples each) to guide manual bed leveling
 gcode:
@@ -63,7 +63,22 @@ Wait for all three `PROBE_ACCURACY` blocks to finish.
 
 ### Copy the console output
 
-Select and copy **everything** printed after you triggered `TRAM_BED` — you need the lines that contain `PROBE_ACCURACY at X:...` and `average X.XXXX`.
+Select and copy **everything** printed after you triggered `TRAM_BED` — you need the lines that contain `PROBE_ACCURACY at X:...` and `average X.XXXX`. For example:
+```
+$ TRAM_BED
+21:39:25 
+PROBE_ACCURACY at X:30.000 Y:30.000 Z:10.000 (samples=3 retract=2.000 speed=4.0 lift_speed=4.0)
+21:39:33 
+probe accuracy results: maximum 0.225000, minimum 0.221667, range 0.003333,average 0.223056, median 0.222500, standard deviation 0.001416
+21:39:34 
+PROBE_ACCURACY at X:320.000 Y:30.000 Z:10.000 (samples=3 retract=2.000 speed=4.0 lift_speed=4.0)
+21:39:44 
+probe accuracy results: maximum 0.336667, minimum 0.335000, range 0.001667,average 0.335833, median 0.335000, standard deviation 0.000680
+21:39:44 
+PROBE_ACCURACY at X:175.000 Y:320.000 Z:10.000 (samples=3 retract=2.000 speed=4.0 lift_speed=4.0)
+21:39:56 
+probe accuracy results: maximum 0.034167, minimum 0.030000, range 0.004167,average 0.031944, median 0.034167, standard deviation 0.001712
+```
 
 ### Run the script
 
@@ -73,9 +88,6 @@ python3 tram_calc.py
 
 # M4 bed adjustment screws
 python3 tram_calc.py M4
-
-# Custom pitch in mm/turn
-python3 tram_calc.py 8
 ```
 
 Paste the copied console output at the prompt, then press **Ctrl+D** (Linux/macOS) or **Ctrl+Z + Enter** (Windows).
@@ -132,6 +144,38 @@ Running `TRAM_BED` and adjusting the screws per the calculator output reduces be
 **After** — range 0.41 mm (bed trammed):
 
 ![After tramming](img/Screenshot%202026-06-03%20225347.png)
+
+---
+
+## Z-axis Belt Replacement
+
+Full official guide: [Kobra S1 Max – Z-axis Belt Replacement Guide](https://wiki.anycubic.com/en/fdm-3d-printer/kobra-s1-max-combo/z-axis-belt-replacement-guide)
+
+**Tools required:** H2.0 Allen key
+
+### Removal
+
+1. Turn off the printer and disconnect power.
+2. Lay the printer on its side to access the bottom.
+3. Loosen the two screws securing the belt tensioner.
+4. Remove the hook tension spring to fully release belt tension.
+5. Slide the belt off the Z-axis motor pulley, then off the three bottom pulleys.
+6. Remove the two tensioner screws with the H2.0 Allen key and pull the tensioner free.
+
+### Installation
+
+1. Route the new belt around the three bottom pulleys.
+2. Seat the belt onto the Z-axis motor pulley.
+3. Reinstall the tensioner and tighten its two screws with the H2.0 Allen key.
+4. Reattach the hook tension spring.
+
+### Pulley securing tip
+
+When routing the belt around the three bottom pulleys, the pulleys tend to shift and fall out of position. **Secure all three pulleys with a strip of tape before threading the belt** — this keeps them locked in place while you work and makes routing significantly easier.
+
+![Three bottom pulleys taped in place](img/printer_belt.png)
+
+Remove the tape once the belt is fully seated and the tensioner is tightened.
 
 ---
 
