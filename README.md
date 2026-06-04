@@ -121,6 +121,20 @@ A deviation ≤ 0.05 mm is shown as `OK` and requires no action.
 
 ---
 
+## Before / After
+
+Running `TRAM_BED` and adjusting the screws per the calculator output reduces bed deviation significantly.
+
+**Before** — range 2.65 mm (bed badly out of tram):
+
+![Before tramming](img/Screenshot%202026-06-03%20214108.png)
+
+**After** — range 0.41 mm (bed trammed):
+
+![After tramming](img/Screenshot%202026-06-03%20225347.png)
+
+---
+
 ## Tips
 
 - Run the macro with the bed and nozzle at printing temperature for the most accurate results.
