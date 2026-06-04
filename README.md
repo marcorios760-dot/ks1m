@@ -2,14 +2,12 @@
 
 Reads `PROBE_ACCURACY` output from the `TRAM_BED` Klipper macro and tells you exactly how many turns (and in which direction) to rotate each bed screw to level the bed.
 
----
 
 ## Requirements
 
 - Python 3.10 or newer (uses `list[dict]` type hint syntax)
 - No external dependencies
 
----
 
 ## Setup
 
@@ -47,7 +45,6 @@ Probe positions correspond to:
 | Front-Right   | 320 | 30  |
 | Rear-Center   | 175 | 320 |
 
----
 
 ## Usage
 
@@ -106,7 +103,6 @@ Paste the copied console output at the prompt, then press **Ctrl+D** (Linux/macO
 
 You can also pass any numeric value directly (e.g. `python3 tram_calc.py 1.25`).
 
----
 
 ## Example output
 
@@ -131,7 +127,6 @@ You can also pass any numeric value directly (e.g. `python3 tram_calc.py 1.25`).
 
 A deviation ≤ 0.05 mm is shown as `OK` and requires no action.
 
----
 
 ## Before / After
 
