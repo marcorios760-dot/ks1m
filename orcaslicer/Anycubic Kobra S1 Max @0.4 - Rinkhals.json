@@ -1,0 +1,17 @@
+{
+	"before_layer_change_gcode": "{if layer_num==0} ; PURGE LINE\nM204 P500\nSET_VELOCITY_LIMIT SQUARE_CORNER_VELOCITY=9\n\n; --- Safe Exit from Sweep_Position ---\nG1 Z10 F480\nG1 X105 F7200\nG1 X135 Y5 F12000 ; Travel all the way down to the FRONT of the bed\n\n; --- Purge Sequence (Front) ---\nG1 Z0.75 F900 ; for object exclusion\nG1 Z0.25 F900 ; Lower to purge height\nG1 E0.8 F2400\nG1 E0.6 F2400\nG1 F2400 ; Controlled purge speed\nG1 X205 Y5 E3.72454\nG1 X205 Y5.45 E.0252\nG1 X135 Y5.45 E3.72454\nG1 X135 Y5.02 E.02305\nG1 Z10 F600 ; Lift Z safely after the wipe before starting the print\n{endif}",
+	"from": "User",
+	"inherits": "Anycubic Kobra S1 Max 0.4 nozzle",
+	"name": "Anycubic Kobra S1 Max @0.4 - Rinkhals",
+	"print_host": "fluidd.mins.net",
+	"printer_agent": "moonraker",
+	"printer_extruder_id": [
+		"1"
+	],
+	"printer_extruder_variant": [
+		"Direct Drive Standard"
+	],
+	"printer_settings_id": "Anycubic Kobra S1 Max @0.4 - Rinkhals",
+	"printhost_ssl_ignore_revoke": "1",
+	"version": "2.4.0.1"
+}
