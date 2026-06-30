@@ -2,6 +2,12 @@
 
 Reads `PROBE_ACCURACY` output from the `TRAM_BED` Klipper macro and tells you exactly how many turns (and in which direction) to rotate each bed screw to level the bed.
 
+## Anycubic LAN panel
+
+This repository also includes `anycubic-panel/anycubic_panel.py`, a local browser panel for a Kobra S1 Max that is already connected to Wi-Fi but cannot be controlled from the touchscreen.
+
+See [`anycubic-panel/README.md`](anycubic-panel/README.md) for setup, printer CN extraction, QR code format, and LAN control details.
+
 
 ## Requirements
 
